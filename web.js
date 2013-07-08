@@ -5,7 +5,9 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   //response.send('Hello World!2');
   // read from the index.html file here
-  var str = new Buffer(fs.readFile('index.html'));
+  var buffer = new Buffer(16);
+  var str = fs.readFile('index.html');
+  buffer.write(str, "utf-8");
   response.send(str);
   
 });
