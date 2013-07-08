@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   var buffer = new Buffer(200);
-  var str = fs.readFile('index.html',buffer);
+  var str = fs.readFileSync('index.html',buffer);
   response.send(buffer.toString('utf-8'));
 });
 
