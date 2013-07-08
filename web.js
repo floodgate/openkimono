@@ -8,7 +8,7 @@ app.get('/', function(request, response) {
   var buffer = new Buffer(16);
   var str = fs.readFile('index.html');
   buffer.write(str, "utf-8");
-  response.send(str);
+  response.send('whats up!');
   
 });
 
